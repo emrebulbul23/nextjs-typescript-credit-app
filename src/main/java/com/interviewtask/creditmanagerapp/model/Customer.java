@@ -1,61 +1,36 @@
 package com.interviewtask.creditmanagerapp.model;
 
-public class Customer {
-    private String firstName;
-    private String lastName;
-    private String nationalIdNo;
-    private Integer monthlyIncome;
-    private String telephoneNumber;
+public class Customer extends SimpleCustomer{
+    private CreditResult creditResult;
+    private Integer creditAmount;
 
-    private Customer(){
+    public Customer(){
 
     }
 
-    public Customer(String firstName, String lastName, String nationalIdNo, Integer monthlyIncome, String telephoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.nationalIdNo = nationalIdNo;
-        this.monthlyIncome = monthlyIncome;
-        this.telephoneNumber = telephoneNumber;
+    public Customer(SimpleCustomer sc) {
+        super(sc.getFirstName(),
+                sc.getLastName(),
+                sc.getNationalIdNo(),
+                sc.getMonthlyIncome(),
+                sc.getTelephoneNumber());
+        this.creditResult = CreditResult.PENDING;
+        this.creditAmount = 0;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public CreditResult getCreditResult() {
+        return creditResult;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setCreditResult(CreditResult creditResult) {
+        this.creditResult = creditResult;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Integer getCreditAmount() {
+        return creditAmount;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getNationalIdNo() {
-        return nationalIdNo;
-    }
-
-    public void setNationalIdNo(String nationalIdNo) {
-        this.nationalIdNo = nationalIdNo;
-    }
-
-    public Integer getMonthlyIncome() {
-        return monthlyIncome;
-    }
-
-    public void setMonthlyIncome(Integer monthlyIncome) {
-        this.monthlyIncome = monthlyIncome;
-    }
-
-    public String getTelephoneNumber() {
-        return telephoneNumber;
-    }
-
-    public void setTelephoneNumber(String telephoneNumber) {
-        this.telephoneNumber = telephoneNumber;
+    public void setCreditAmount(Integer creditAmount) {
+        this.creditAmount = creditAmount;
     }
 }
