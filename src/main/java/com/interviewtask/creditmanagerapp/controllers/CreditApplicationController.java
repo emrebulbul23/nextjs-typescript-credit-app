@@ -36,7 +36,7 @@ public class CreditApplicationController {
      * @return CreditResultResponse
      */
     @Operation(summary = "Apply for a credit.")
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity applyForCredit(@RequestBody SimpleCustomer sc) {
         if (!sc.validate()) {
             return ResponseEntity.status(400).body("Customer information contains empty or invalid fields");
