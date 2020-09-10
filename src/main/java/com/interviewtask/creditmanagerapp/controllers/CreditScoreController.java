@@ -39,11 +39,24 @@ public class CreditScoreController {
     }
 
     /**
+     * Get a customer's credit score with their national id number.
+     * @param id Customer's national id number.
+     * @return CreditScore object of the customer.
+     */
+    @CrossOrigin(origins = "http://localhost:3000")
+    @Operation(summary = "Get a customer's credit score.")
+    @GetMapping(value="get")
+    public String get(String id){
+        return "hello emre";
+    }
+
+    /**
      * Adds a customers credit score to the collection using their national
      * id number. If national id number exists in db, it is updated.
      * @param cs CreditScore of customer.
      * @return ResponseEntity
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @Operation(summary = "Add or update a customers credit score.")
     @PostMapping(value="")
     public ResponseEntity<String> putCreditScore(@RequestBody CreditScore cs){

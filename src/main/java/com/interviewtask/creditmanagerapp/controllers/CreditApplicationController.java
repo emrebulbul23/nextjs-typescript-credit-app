@@ -10,10 +10,7 @@ import com.interviewtask.creditmanagerapp.respositories.ICustomerRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -35,6 +32,7 @@ public class CreditApplicationController {
      * @param sc Customer applying for the credit.
      * @return CreditResultResponse
      */
+    @CrossOrigin(origins = "http://localhost:3000")
     @Operation(summary = "Apply for a credit.")
     @PostMapping("")
     public ResponseEntity applyForCredit(@RequestBody SimpleCustomer sc) {
